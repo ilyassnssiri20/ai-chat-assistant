@@ -94,12 +94,12 @@ fastapi-react-ai-chatbot/
 
 ### 0. Prerequisites
 
-| Tool  | Version    | Check with      |
-|-------|------------|-----------------|
-| Node.js | ≥ 18 LTS  | `node --version` |
-| npm     | ≥ 9       | `npm --version`  |
-| Python  | ≥ 3.8     | `python --version` |
-| pip     | ≥ 21      | `pip --version`  |
+| Tool    | Version   | Check with           |
+| ------- | --------- | -------------------- |
+| Node.js | ≥ 18 LTS | `node --version`   |
+| npm     | ≥ 9      | `npm --version`    |
+| Python  | ≥ 3.8    | `python --version` |
+| pip     | ≥ 21     | `pip --version`    |
 
 You also need a **Google Gemini API key** — get one free at [Google AI Studio](https://aistudio.google.com/apikey).
 
@@ -174,6 +174,7 @@ GET /
 ```
 
 **Response** `200 OK`
+
 ```json
 { "status": "ok" }
 ```
@@ -188,6 +189,7 @@ Content-Type: application/json
 ```
 
 **Request Body**
+
 ```json
 {
   "user_message": "Explain quantum computing in one sentence."
@@ -195,6 +197,7 @@ Content-Type: application/json
 ```
 
 **Response** `200 OK`
+
 ```json
 {
   "response": "Quantum computing uses qubits that can exist in superposition..."
@@ -202,6 +205,7 @@ Content-Type: application/json
 ```
 
 **Error** `500 Internal Server Error`
+
 ```json
 {
   "detail": "Error generating content: ..."
@@ -214,9 +218,9 @@ Content-Type: application/json
 
 ### Backend Environment Variables
 
-| Variable          | Required | Description                     |
-|-------------------|----------|---------------------------------|
-| `GOOGLE_API_KEY`  | ✅ Yes   | Google Gemini API key           |
+| Variable           | Required | Description           |
+| ------------------ | -------- | --------------------- |
+| `GOOGLE_API_KEY` | ✅ Yes   | Google Gemini API key |
 
 ### CORS Allowed Origins
 
@@ -235,12 +239,12 @@ origins = [
 
 ### Frontend
 
-| Script             | Action                         |
-|--------------------|--------------------------------|
-| `npm run dev`      | Start Vite dev server (HMR)   |
-| `npm run build`    | Production build to `dist/`   |
-| `npm run preview`  | Preview production build      |
-| `npm run lint`     | Run ESLint                    |
+| Script              | Action                        |
+| ------------------- | ----------------------------- |
+| `npm run dev`     | Start Vite dev server (HMR)   |
+| `npm run build`   | Production build to `dist/` |
+| `npm run preview` | Preview production build      |
+| `npm run lint`    | Run ESLint                    |
 
 ### Backend
 
@@ -252,47 +256,5 @@ uvicorn main:app --reload --port 8000
 
 ---
 
-## 🐛 Troubleshooting
-
-| Problem | Likely Fix |
-|---------|------------|
-| `GOOGLE_API_KEY environment variable is not set` | Create `.env` inside `chatbot-backend/` with a valid key |
-| `Failed to initialize Gemini model` | Check that your API key is active and has quota remaining |
-| `Network Error` / CORS errors in browser | Ensure backend is running on port 8000 and frontend on 5173 |
-| `ModuleNotFoundError: No module named 'google.generativeai'` | Run `pip install google-generativeai` |
-| Chat history disappears | `localStorage` may have been cleared — this is expected in incognito mode |
-
----
-
-## 🚢 Deployment
-
-### Backend (example with Render / Railway)
-
-```bash
-# Use the same start command; add your env vars in the hosting dashboard
-uvicorn main:app --host 0.0.0.0 --port $PORT
-```
-
-### Frontend (example with Vercel / Netlify)
-
-```bash
-npm run build
-# Deploy the chatbot-frontend/dist folder
-```
-
-> **Remember** to update the `fetch` URL in `App.jsx` and the CORS `origins` in `main.py` to match your deployed URLs.
-
----
-
-## 📄 License
-
-MIT © 2024 — see the [LICENSE](LICENSE) file for details.
-
----
-
-## 🙌 Acknowledgments
-
-- [Google Gemini API](https://ai.google.dev/) for the AI model
-- [FastAPI](https://fastapi.tiangolo.com/) for the Python backend framework
-- [Vite](https://vitejs.dev/) for the blazing-fast frontend tooling
-- [Phosphor Icons](https://phosphoricons.com/) for icon inspiration
+|  |  |
+| - | - |

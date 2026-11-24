@@ -33,19 +33,5 @@ dist-ssr
 
 # Python
 .venv/
-__pycache__/
-*.py[cod]
-.pytest_cache/
 
-# Node
-node_modules/
-dist/
-build/
-
-# IDE
-.vscode/
-.idea/
-
-# OS
-.DS_Store
 
